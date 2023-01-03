@@ -1,5 +1,6 @@
 # BitcoinTradingSystem
 CS 6360 Term Project 
+* Chetan Khairnar(cxk210037)
 * Nikitha Ramisetty(nxr210008)
 * Kanakaratna Kalyan Kumar Singamsetty(kxs200019)
 * Saakshara Kanyadara(sxk210041)
