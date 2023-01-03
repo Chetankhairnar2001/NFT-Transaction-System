@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Bootstrap Template</title>
+    <!-- Bootstrap CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 60% !important;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-1 px-2 h1"><a class="text-decoration-none"
+                href="http://127.0.0.1:5000/client-home">Home</a></span>
+    </nav>
+
+    <h1 class="text-center mt-3">ACCOUNT DETAILS</h1>
+
+    <div class="container">
+        <table class="table table-striped border border-secondary">
+            <thead>
+                <tr>
+                    <th>Table</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Client ID</td>
+                    <td>{{r[0]}}</td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>{{r[1]}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{r[2]}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{r[3]}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>{{r[4]}}</td>
+                </tr>
+                <tr>
+                    <td>Cell Number</td>
+                    <td>{{r[5]}}</td>
+                </tr>
+                <tr>
+                    <td>Account Status</td>
+                    <td>{{r[6]}}</td>
+                </tr>
+                <tr>
+                    <td>Ethereum Balance</td>
+                    <td>{{r[9]}}</td>
+                </tr>
+                <tr>
+                    <td>Fiat Balance</td>
+                    <td>{{r[10]}}</td>
+                </tr>
+                <tr>
+                    <td>User Type</td>
+                    <td>{{r[11]}}</td>
+                </tr>
+            </tbody>  
+        </table>
+    </div>
+
+    <div class="container border border border-secondary my-3">
+        <form method="POST">
+            <div class="mt-5 mb-3">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Token ID</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Sell</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for i in r%}
+                        <tr>
+                            <td>{{i[0]}}</td>
+                            <td>{{i[1]}}</td>
+                            <td>{{i[2]}}</td>
+                            <td>{{i[3]}}</td>
+                            <td><input type="radio" name="token_id" value={{i[0]}}></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

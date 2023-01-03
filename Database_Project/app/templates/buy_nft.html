@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Bootstrap Template</title>
+    <!-- Bootstrap CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 60% !important;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-brand mb-1 px-2 h1"><a class="text-decoration-none" href="http://127.0.0.1:5000/client-home">Home</a></span>
+    </nav>
+
+    <h1 class="text-center mt-3">Buy NFT</h1>
+
+    <div class="container mt-3 mb-3">
+        <table class="table table-sm table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Fiat Currency</th>
+                <th scope="col">Ethereum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{s[10]}}</td>
+                <td>{{s[9]}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="container border">
+        <form method = "POST">
+            <div class="mb-3">
+                <label class="form-label" for="inputaddress">Smart Control Address</label>
+                <input type="text" class="form-control" id="saddress" name="saddress" placeholder="Smart Control Address">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="inputtoken">Token ID</label>
+                <input type="number" class="form-control" id="token" name="token" placeholder="Tocken ID">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="inputPassword">Password</label>
+                <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+            </div>
+            <div class="mb-3">
+                <label for="pay">Choose a mode of payment:</label>
+                <select name="comm" id="comm">
+                    <option value="ethereum">Ethereum</option>
+                    <option value="fiat">Fiat Balance</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="container mt-5 mb-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Token ID</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in r%}
+                  <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                  </tr>
+                  {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+Flask
+Mysql-connector-python
+Mysql-python
+mysql.connector
+#Urllib3
+#Json
+Datetime

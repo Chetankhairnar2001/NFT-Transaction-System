@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Bootstrap Template</title>
+    <!-- Bootstrap CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            max-width: 60% !important;
+            padding: 1rem;
+        }
+        table, th, td {
+         border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark">
+        <!-- <span class="navbar-brand mb-1 px-2 h1"><a class="text-decoration-none"
+                href="http://127.0.0.1:5000/client-home">Home</a></span>
+        <span class="navbar-brand mb-1 px-2 h1"><a class="text-decoration-none"
+                href="http://127.0.0.1:5000/client-home">Home</a></span> -->
+        <ul>
+            <div>
+                <li><a class="text-decoration-none navbar-brand mb-1 px-2 h1" href="http://127.0.0.1:5000/manager-home">Home</a></li>
+            </div>
+            <br>
+            <div>
+                <li><a class="text-decoration-none navbar-brand mb-1 px-2 h1" href="welcome.html">Login Page</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="myDiv my-3">
+        <h2 class="text-center">ORDER INFORMATION DETAILS </h2>
+    </div>
+
+
+    <div class="container">
+        <h3>Order Transaction Table</h3>
+        <table style="width:100%">
+            <tr>
+                <th>trans_id </th>
+                <th>trans_type</th>
+                <th>trans_value</th>
+                <th>comm_type</th>
+                <th>comm_amount</th>
+                <th>client_id </th>
+                <th>trader_id </th>
+                <th>timestamp </th>
+            </tr>
+            {%for i in r%}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[6]}}</td>
+                <td>{{i[7]}}</td>
+            </tr>
+            {%endfor%}
+
+        </table>
+    </div><br><br><br><br>
+    
+    <div class="container">
+        <h3>Payments Table</h3>
+        <table>
+            <tr>
+                <th>payment_id </th>
+                <th>client_id</th>
+                <th>trader_id</th>
+                <th>payment_status</th>
+                <th>payment_amount</th>
+                <th>timestamp</th>
+            </tr>
+            {%for j in p%}
+            <tr>
+                <td>{{j[0]}}</td>
+                <td>{{j[1]}}</td>
+                <td>{{j[2]}}</td>
+                <td>{{j[3]}}</td>
+                <td>{{j[4]}}</td>
+                <td>{{j[5]}}</td>
+            </tr>
+            {%endfor%}
+
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

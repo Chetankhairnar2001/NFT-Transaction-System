@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      form{
+        border: 1px solid black;
+        margin: auto;
+        width: 60%;
+        padding: 1rem;
+      }
+    </style>
+</head>
+<body>
+  <ul>
+        <li><a href="http://127.0.0.1:5000/client-home">Home</a></li>
+    </ul>
+    <h2>Buyers</h2>
+<div>
+<form method = "POST">
+  <label for="saddress">Smart Control Address</label><br>
+  <input type="text" id="saddress" name="saddress"><br>
+  <label for="token">Tocken ID:</label><br>
+  <input type="text" id="token" name="token" > <br>
+  <label for="pass">Password</label><br>
+  <input type="password" name="pass" id="pass"><br>
+  <label for="pay">Choose a mode of payment:</label>
+  <select name="comm" id="comm">
+    <option value="eth">Ethereum</option>
+    <option value="usd">Fiat Balance</option>
+    
+  </select>
+  <br> 
+  <button type="submit">Submit</button>
+</form>
+</div>
+
+
+<table>
+
+  <tr>
+    <th>token_id</th>
+    <th>Address</th>
+    <th>Name</th>
+    <th>Cost</th>
+  </tr>
+  {%for i in r%}
+  <tr>
+    <td>{{i[0]}}</td>
+    <td>{{i[1]}}</td>
+    <td>{{i[2]}}</td>
+    <td>{{i[3]}}</td>
+  </tr>
+  {%endfor%}
+  
+
+</table>
+    </div>  
+</body>
