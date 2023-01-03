@@ -1,4 +1,4 @@
-# BitcoinTradingSystem
+# NFT-Trading-System
 CS 6360 Term Project 
 * Chetan Khairnar(cxk210037)
 * Nikitha Ramisetty(nxr210008)
